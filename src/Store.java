@@ -22,4 +22,8 @@ public class Store
     public void display_info()
     {
     }
+
+    public void manage_storage()
+    {
+    }
 }
