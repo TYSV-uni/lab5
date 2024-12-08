@@ -11,7 +11,7 @@ public class Main
         store.storage.add(product1);
         store.storage.add(product2);
         store.storage.add(product3);
-        //Managing store storage (includes the ability to add custom product)
+        //Managing store storage (includes the ability to add a custom product)
         store.manage_storage();
         //Adding orders to the store
         store.add_order();
