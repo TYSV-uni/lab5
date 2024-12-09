@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class Store
 {
@@ -68,38 +67,25 @@ public class Store
                 return;
 
             case 1:
+                //Sets Paid state
                 order.next_state();
                 order.print_state();
 
+                //Sets Preparing state
                 order.next_state();
-                System.out.println("Please wait, order is being prepared");
-                try
-                {
-                    TimeUnit.SECONDS.sleep(3);
-                }
-                catch (InterruptedException e)
-                {
-                    System.out.println(e.getMessage());
-                }
 
-                System.out.println("Order prepared, sending");
-                try
-                {
-                    TimeUnit.SECONDS.sleep(2);
-                }
-                catch (InterruptedException e)
-                {
-                    System.out.println(e.getMessage());
-                }
+                //Sets Sent state
                 order.next_state();
                 order.print_state();
 
+                //Actually sends the products
                 for (Product p : order.products)
                 {
                     storage.send(p);
                     balance += p.price * p.quantity;
                 }
 
+                //Removes the order since it has been completed
                 orders.remove(order);
                 break;
 
