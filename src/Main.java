@@ -6,7 +6,7 @@ public class Main
         Product product2 = new Product("Soap", 20, 1);
         Product product3 = new Product("Chair", 200, 1);
         //Creating store with default balance of 0 and 0 orders
-        Store store = new Store(new Storage());
+        Store store = new Store();
         //Adding products to the store storage
         store.storage.add(product1);
         store.storage.add(product2);

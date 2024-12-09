@@ -3,15 +3,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Store
 {
-    public Storage storage;
+    public Storage storage = new Storage();
     private int balance = 0;
     private final ArrayList<Order> orders = new ArrayList<>();
-    
-    
-    public Store(Storage storage)
-    {
-        this.storage = storage;
-    }
+
 
     public void add_order()
     {
